@@ -1,0 +1,44 @@
+.header{
+    background-color: #282c34;
+    font-family: Roboto Slab;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 24px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    color: white;
+    padding: 30px 104px 0;
+}
+
+.header__subtitle {
+    font-family: Roboto;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 24px;
+    letter-spacing: 0px;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.header__divider{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 54px;    
+}
+
+.header__button{
+    background: none;
+    color: white;
+    border: 1px solid white;
+    opacity: 1;
+    border-radius: 100px;
+    border-width: 1px;
+    padding: 12px;
+    width: 152px;
+}
+
+
+
