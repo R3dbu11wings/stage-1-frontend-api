@@ -1,5 +1,4 @@
 .header{
-    background-color: #282c34;
     font-family: Roboto Slab;
     font-weight: 700;
     font-size: 20px;
@@ -10,6 +9,15 @@
     justify-content: space-between;
     color: white;
     padding: 30px 104px 0;
+}
+
+.header__title{
+    font-family: Roboto Slab;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 24px;
+    vertical-align: middle;
+
 }
 
 .header__subtitle {
