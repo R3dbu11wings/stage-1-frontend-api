@@ -5,7 +5,7 @@ function About() {
     <div className="about">
    <div className="about__image-container">
   <img 
-    src="../../public/smile.svg" 
+    src="/smile.svg" 
     alt="Author" 
     className="about__image"
   />

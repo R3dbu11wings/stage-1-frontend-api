@@ -1,0 +1,30 @@
+.footer {
+     display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 104px 0;
+}
+
+.footer__nav {
+    display: flex;
+    
+}
+
+ .footer__divider {
+    display: flex;
+    gap: 40px;
+    margin-right: 40px;
+}
+
+.footer__image {
+    width: 24px;
+    height: 24px;
+    padding-right: 24px;
+}
+
+.footer__image-git{
+    display: flex;
+    width: 24px;
+    height: 24px;
+
+}
