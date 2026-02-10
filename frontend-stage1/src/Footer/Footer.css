@@ -16,6 +16,11 @@
     margin-right: 40px;
 }
 
+.footer__link {
+    text-decoration: none;
+    color:inherit
+}
+
 .footer__image {
     width: 24px;
     height: 24px;
