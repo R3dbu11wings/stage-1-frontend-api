@@ -9,8 +9,8 @@ function Footer() {
         <a href="/" className="footer__link">Home</a>
         <a href="https://tripleten.com" className="footer__link" target="_blank" rel="noopener noreferrer">TripleTen</a>
         </span>
-        <a href="https://www.linkedin.com/in/zachary-tesch" className="footer__link" target="_blank" rel="noopener noreferrer"><img className='footer__image' src="/linkedin.svg" alt="LinkedIn"/></a>
-        <a href="https://github.com/R3dbu11wings" className="footer__link" target="_blank" rel="noopener noreferrer"><img className='footer__image-git' src="/github.svg" alt="GitHub"/></a>
+        <a href="https://www.linkedin.com/in/zachary-tesch" className="footer__link" target="_blank" rel="noopener noreferrer"><img className='footer__image' src="../../src/assets/linkedin.svg" alt="LinkedIn"/></a>
+        <a href="https://github.com/R3dbu11wings" className="footer__link" target="_blank" rel="noopener noreferrer"><img className='footer__image-git' src="../../src/assets/github.svg" alt="GitHub"/></a>
       </nav>
     </footer>
   )
