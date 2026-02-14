@@ -18,7 +18,7 @@
   max-width: 430px;
   width: 100%;
   position: relative;
-  border:1px #000000 solid;
+  border: 1px #000000 solid;
 }
 
 .modal__close {
@@ -40,7 +40,7 @@
 .modal__title {
   margin: 0 0 24px 0;
   font-size: 24px;
-  text-align: left ;
+  text-align: left;
 }
 
 .modal__form {
@@ -57,7 +57,7 @@
 }
 
 .modal__input {
-   padding: 12px 0;
+  padding: 12px 0;
   border: none;
   border-bottom: 1px solid #ddd;
   border-radius: 0;
@@ -67,15 +67,15 @@
 
 .modal__input:focus {
   outline: none;
-  border-bottom: 1px solid #ddd;
+  border-bottom: 1px solid #2f71e5;
 }
 
 .modal__button {
-    align-self: center;
-    width: 358px;
-    height: 64px;
+  align-self: center;
+  width: 358px;
+  height: 64px;
   padding: 12px;
-  background-color:#2F71E5;
+  background-color: #2f71e5;
   color: white;
   border: none;
   border-radius: 100px;
@@ -85,7 +85,7 @@
 }
 
 .modal__button:hover {
-  background-color: #347EFF;
+  background-color: #347eff;
 }
 
 .modal__text {
@@ -97,7 +97,7 @@
 .modal__link {
   background: none;
   border: none;
-  color: #2F71E5;
+  color: #2f71e5;
   cursor: pointer;
   text-decoration: underline;
   margin-left: 4px;
@@ -105,5 +105,5 @@
 }
 
 .modal__link:hover {
-  color: #45a049;
+  color: #347eff;
 }

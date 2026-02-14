@@ -1,15 +1,13 @@
-import "./Header.css"
+import "./Header.css";
+import Navigation from "../Navigation/Navigation.jsx";
 
 function Header({ onSignInClick }) {
-    return (
-        <header className="header">
-            <h1 className="header__title">NewsExplorer</h1>
-            <div className="header__divider">
-                <a href="/" className="header__link">Home</a>
-                <button className="header__button" onClick={onSignInClick}>Sign In</button>
-            </div>
-        </header>
-    );
+  return (
+    <header className="header">
+      <h1 className="header__title">NewsExplorer</h1>
+      <Navigation onSignInClick={onSignInClick} />
+    </header>
+  );
 }
 
 export default Header;

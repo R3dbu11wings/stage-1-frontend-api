@@ -1,54 +1,20 @@
-.header{
-    font-family: Roboto Slab;
-    font-weight: 700;
-    font-size: 20px;
-    line-height: 24px;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-    color: white;
-    padding: 30px 104px 0;
+.header {
+  font-family: Roboto Slab;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 24px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  color: white;
+  padding: 30px 104px 0;
 }
 
-.header__title{
-    font-family: Roboto Slab;
-    font-weight: 700;
-    font-size: 20px;
-    line-height: 24px;
-    vertical-align: middle;
-
+.header__title {
+  font-family: Roboto Slab;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 24px;
+  vertical-align: middle;
 }
-
-.header__link {
-    font-family: Roboto;
-    font-weight: 500;
-    font-size: 18px;
-    line-height: 24px;
-    letter-spacing: 0px;
-    text-align: center;
-    vertical-align: middle;
-    text-decoration: none;
-    color: white;
-}
-
-.header__divider{
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    gap: 54px;    
-}
-
-.header__button{
-    background: none;
-    color: white;
-    border: 1px solid white;
-    opacity: 1;
-    border-radius: 100px;
-    border-width: 1px;
-    padding: 12px;
-    width: 152px;
-}
-
-
-
