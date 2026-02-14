@@ -2,12 +2,17 @@ import { useState } from "react";
 import "./Main.css";
 import NewsCard from "../NewsCard/NewsCard.jsx";
 
+
+const INITIAL_COUNT = 3;
+const LOAD_MORE_COUNT = 3;
+
 function Main() {
   const [searchQuery, setSearchQuery] = useState("");
   const [articles, setArticles] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
   const [hasSearched, setHasSearched] = useState(false);
   const [error, setError] = useState(null);
+  const [visibleCount, setVisibleCount] = useState(INITIAL_COUNT);
 
   const handleSearch = async (e) => {
     e.preventDefault();
@@ -16,6 +21,7 @@ function Main() {
     setIsLoading(true);
     setHasSearched(true);
     setError(null);
+    setVisibleCount(INITIAL_COUNT);
 
     try {
       const response = await fetch(
@@ -29,6 +35,9 @@ function Main() {
       setIsLoading(false);
     }
   };
+
+  const visibleArticles = articles.slice(0, visibleCount);
+  const hasMore = visibleCount < articles.length;
 
   return (
     <div className="main">
@@ -55,12 +64,22 @@ function Main() {
         <p className="main__status">No results found.</p>
       )}
 
-      {articles.length > 0 && (
-        <div className="main__cards">
-          {articles.map((article, index) => (
-            <NewsCard key={index} article={article} />
-          ))}
-        </div>
+      {visibleArticles.length > 0 && (
+        <>
+          <div className="main__cards">
+            {visibleArticles.map((article, index) => (
+              <NewsCard key={index} article={article} />
+            ))}
+</div>
+          {hasMore && (
+            <button
+              className="main__see-more"
+              onClick={() => setVisibleCount((prev) => prev + LOAD_MORE_COUNT)}
+            >
+              See More
+            </button>
+          )} 
+        </>
       )}
     </div>
   );

@@ -4,6 +4,7 @@
     justify-content: center;
     align-items: center;
     color: white;
+    background-color: #F5F6F7;
 }
 
 .main__title{
@@ -58,4 +59,12 @@
 
 .main__search-button:hover {
   background-color: #1976D2;
+}
+
+.main__see-more{
+  width: 288px;
+  height: 64px;
+  border-radius: 80px;
+  background-color: #FFFFFF;
+  margin-bottom: 80px;
 }

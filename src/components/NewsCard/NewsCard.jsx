@@ -1,3 +1,4 @@
+
 import "./NewsCard.css";
 
 function NewsCard({ article }) {
