@@ -7,7 +7,7 @@ import Preloader from "../Preloader/Preloader.jsx";
 const INITIAL_COUNT = 3;
 const LOAD_MORE_COUNT = 3;
 
-function Main() {
+function Main({ savedArticles, onSave }) {
   const [articles, setArticles] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
   const [hasSearched, setHasSearched] = useState(false);
@@ -54,10 +54,16 @@ function Main() {
       )}
 
       {visibleArticles.length > 0 && (
-        <>
+        <section className="main__results">
+          <h2 className="main__results-title">Search results</h2>
           <div className="main__cards">
             {visibleArticles.map((article, index) => (
-              <NewsCard key={index} article={article} />
+              <NewsCard
+                key={index}
+                article={article}
+                onSave={onSave}
+                isSaved={savedArticles.some((a) => a.url === article.url)}
+              />
             ))}
           </div>
           {hasMore && (
@@ -68,7 +74,7 @@ function Main() {
               See More
             </button>
           )}
-        </>
+        </section>
       )}
     </div>
   );

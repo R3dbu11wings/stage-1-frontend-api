@@ -1,7 +1,6 @@
-
 import "./NewsCard.css";
 
-function NewsCard({ article }) {
+function NewsCard({ article, onSave, isSaved }) {
   const { urlToImage, title, description, publishedAt, source, url } = article;
 
   const formattedDate = new Date(publishedAt).toLocaleDateString("en-US", {
@@ -18,7 +17,13 @@ function NewsCard({ article }) {
           src={urlToImage || "/placeholder.png"}
           alt={title}
         />
-      </a>
+      </a>{" "}
+      <button
+        className={`card__save-btn ${isSaved ? "card__save-btn_active" : ""}`}
+        onClick={() => onSave(article)}
+      >
+        {isSaved ? "✕" : "🔖"}
+      </button>
       <div className="card__content">
         <p className="card__date">{formattedDate}</p>
         <h3 className="card__title">{title}</h3>

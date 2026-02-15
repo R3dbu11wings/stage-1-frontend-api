@@ -10,11 +10,53 @@
   font-weight: 500;
   font-size: 18px;
   line-height: 24px;
-  letter-spacing: 0px;
   text-align: center;
-  vertical-align: middle;
   text-decoration: none;
   color: white;
+}
+
+.navigation__link_dark {
+  color: #1a1b22;
+}
+
+.navigation__user {
+  display: flex;
+  gap: 10px;
+  border: 1px solid #ffffff;
+  border-radius: 100px;
+  width: 112px;
+  height: 48px;
+  justify-content: center;
+  align-items: center;
+}
+
+.navigation__user_dark {
+  border-color: #1a1b22;
+}
+
+.navigation__username {
+  font-family: Roboto;
+  font-weight: 500;
+  font-size: 18px;
+  color: white;
+}
+
+.navigation__username_dark {
+  color: #1a1b22;
+}
+
+.navigation__logout {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  display: flex;
+  align-items: center;
+}
+
+.navigation__logout-icon {
+  width: 24px;
+  height: 24px;
 }
 
 .navigation__button {
@@ -26,6 +68,11 @@
   width: 152px;
   font-size: 18px;
   cursor: pointer;
+}
+
+.navigation__button_dark {
+  color: #1a1b22;
+  border-color: #1a1b22;
 }
 
 .navigation__button:hover {

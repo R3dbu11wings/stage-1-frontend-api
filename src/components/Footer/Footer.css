@@ -6,6 +6,10 @@
   height: 80px;
 }
 
+.footer__text {
+  color: #b6bcbf;
+}
+
 .footer__nav {
   display: flex;
   align-items: center;

@@ -29,12 +29,36 @@
   margin: 16px 0;
 }
 
-.main__cards {
+.main__results {
+  background-color: #f5f6f7;
+  width: 100%;
   display: flex;
-  flex-wrap: wrap;
-  gap: 16px;
-  justify-content: center;
-  padding: 40px 0;
+  flex-direction: column;
+  align-items: center;
+}
+
+.main__status {
+  text-align: center;
+  padding: 40px;
+  font-size: 18px;
+  color: #666;
+}
+
+.main__results-title {
+  font-family: Roboto Slab;
+  font-weight: 400;
+  font-size: 40px;
+  line-height: 46px;
+  color: #1a1b22;
+  margin: 80px 104px 64px;
+  align-self: flex-start;
+}
+
+.main__cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin: 0 104px;
 }
 
 .main__see-more {
@@ -42,7 +66,7 @@
   height: 64px;
   border-radius: 80px;
   background-color: #ffffff;
-  margin-bottom: 80px;
+  margin: 64px 0 80px;
   border: none;
   cursor: pointer;
   font-size: 16px;

@@ -11,10 +11,20 @@
   padding: 30px 104px 0;
 }
 
+.header_dark {
+  background-color: white;
+  color: #1a1b22;
+  border-bottom: 1px solid #d1d2d6;
+}
+
 .header__title {
   font-family: Roboto Slab;
   font-weight: 700;
   font-size: 20px;
   line-height: 24px;
   vertical-align: middle;
+}
+
+.header__title_dark {
+  color: #1a1b22;
 }

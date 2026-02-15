@@ -1,6 +1,11 @@
 .page {
-    height: 576px;
-    padding: 0;
-    background: url("../../assets/phone.png") no-repeat center center fixed;
-    background-size: cover;
+  height: 576px;
+  padding: 0;
+  background: url("../../assets/phone.png") no-repeat center center fixed;
+  background-size: cover;
+}
+
+.page_saved {
+  background: white;
+  height: auto;
 }

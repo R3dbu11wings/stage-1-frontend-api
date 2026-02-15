@@ -1,9 +1,21 @@
+import { useState } from "react";
 import ModalWithForm from "../ModalWithForm/ModalWithForm.jsx";
+import { login } from "../../utils/auth.js";
 
-function LoginModal({ isOpen, onClose, onSwitchToRegister }) {
-  const handleSubmit = (e) => {
-    console.log("Login submitted");
-    onClose();
+function LoginModal({ isOpen, onClose, onSwitchToRegister, onLoginSuccess }) {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [error, setError] = useState("");
+
+  const handleSubmit = () => {
+    setError("");
+    login({ email, password })
+      .then((user) => {
+        onLoginSuccess(user);
+      })
+      .catch((err) => {
+        setError(err.message);
+      });
   };
 
   return (
@@ -23,6 +35,8 @@ function LoginModal({ isOpen, onClose, onSwitchToRegister }) {
           className="modal__input"
           required
           placeholder="Enter your email"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
         />
       </label>
       <label className="modal__label">
@@ -32,8 +46,11 @@ function LoginModal({ isOpen, onClose, onSwitchToRegister }) {
           className="modal__input"
           required
           placeholder="Enter your password"
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
         />
       </label>
+      {error && <p className="modal__error">{error}</p>}
     </ModalWithForm>
   );
 }

@@ -1,12 +1,3 @@
-.main__cards {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 24px;
-  padding: 40px;
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
 .card {
   background: white;
   border-radius: 8px;
@@ -18,10 +9,43 @@
   transform: translateY(-4px);
 }
 
+.card__image-container {
+  position: relative;
+}
+
 .card__image {
   width: 100%;
   height: 200px;
   object-fit: cover;
+  display: block;
+}
+
+.card__save-btn {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background: white;
+  border: none;
+  border-radius: 8px;
+  width: 40px;
+  height: 40px;
+  font-size: 18px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.2s;
+}
+
+.card:hover .card__save-btn {
+  opacity: 1;
+}
+
+.card__save-btn_active {
+  opacity: 1;
+  background: #2f71e5;
+  color: white;
 }
 
 .card__content {
@@ -55,11 +79,4 @@
   font-weight: bold;
   color: #999;
   margin-top: auto;
-}
-
-.main__status {
-  text-align: center;
-  padding: 40px;
-  font-size: 18px;
-  color: #666;
 }
