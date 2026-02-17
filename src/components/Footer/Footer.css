@@ -4,6 +4,7 @@
   align-items: center;
   padding: 0 104px;
   height: 80px;
+  background-color: #ffffff;
 }
 
 .footer__text {
@@ -35,4 +36,34 @@
 .footer__image-git {
   width: 24px;
   height: 24px;
+}
+
+@media (max-width: 768px) {
+  .footer {
+    height: 64px;
+    padding: 0 40px 0;
+  }
+}
+
+@media (max-width: 320px) {
+  .footer {
+    height: 134px;
+    padding: 20px 16px 22px;
+    flex-direction: column-reverse;
+  }
+
+  .footer__text {
+    margin: 0;
+  }
+
+  .footer__divider {
+    flex-direction: column;
+    align-items: normal;
+    width: 200px;
+    margin: 0;
+  }
+
+  .footer__link {
+    align-self: baseline;
+  }
 }

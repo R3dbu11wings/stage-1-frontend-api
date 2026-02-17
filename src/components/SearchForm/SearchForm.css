@@ -1,6 +1,5 @@
 .search-form {
   display: flex;
-  max-width: 600px;
   margin: 88px 0 80px;
   width: 608px;
 }
@@ -32,4 +31,30 @@
 
 .search-form__button:hover {
   background-color: #1976d2;
+}
+
+@media (max-width: 768px) {
+  .search-form {
+    width: 452px;
+    margin: 48px 0 48px;
+  }
+}
+
+@media (max-width: 320px) {
+  .search-form {
+    width: 288px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin-top: 122px;
+    margin-bottom: 32px;
+  }
+
+  .search-form__input {
+    border-radius: 100px;
+  }
+
+  .search-form__button {
+    border-radius: 100px;
+  }
 }

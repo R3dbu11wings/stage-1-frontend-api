@@ -1,11 +1,13 @@
 .page {
-  height: 576px;
+  min-height: 100vh;
   padding: 0;
-  background: url("../../assets/phone.png") no-repeat center center fixed;
+  margin: 0;
+  background: url("../../assets/phone.png") no-repeat center top;
   background-size: cover;
+  display: flex;
+  flex-direction: column;
 }
 
 .page_saved {
   background: white;
-  height: auto;
 }

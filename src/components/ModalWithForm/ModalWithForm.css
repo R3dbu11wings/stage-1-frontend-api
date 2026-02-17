@@ -13,7 +13,7 @@
 
 .modal__container {
   background: white;
-  padding: 40px;
+  padding: 36px;
   border-radius: 16px;
   max-width: 430px;
   width: 100%;
@@ -23,13 +23,15 @@
 
 .modal__close {
   position: absolute;
-  top: 16px;
-  right: 16px;
+  width: 40px;
+  height: 40px;
+  top: -40px;
+  right: -40px;
   background: none;
   border: none;
   font-size: 28px;
   cursor: pointer;
-  color: #666;
+  color: #ffffff;
   line-height: 1;
 }
 
@@ -41,6 +43,10 @@
   margin: 0 0 24px 0;
   font-size: 24px;
   text-align: left;
+  font-family: Roboto;
+  font-weight: 900;
+  font-size: 24px;
+  color: #1a1b22;
 }
 
 .modal__form {
@@ -50,19 +56,25 @@
 }
 
 .modal__label {
+  font-family: Inter;
   display: flex;
   flex-direction: column;
-  gap: 8px;
   font-weight: 500;
+  color: #2f71e5;
+  font-weight: 400;
+  font-size: 12px;
 }
 
 .modal__input {
+  font-family: Inter;
+  font-weight: 400;
   padding: 12px 0;
   border: none;
   border-bottom: 1px solid #ddd;
   border-radius: 0;
-  font-size: 16px;
+  font-size: 14px;
   background: transparent;
+  color: #000000;
 }
 
 .modal__input:focus {

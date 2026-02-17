@@ -1,4 +1,5 @@
 import "./ModalWithForm.css";
+import CloseIcon from "../../assets/close.svg";
 
 function ModalWithForm({
   isOpen,
@@ -22,7 +23,8 @@ function ModalWithForm({
     <div className="modal" onClick={onClose}>
       <div className="modal__container" onClick={(e) => e.stopPropagation()}>
         <button className="modal__close" onClick={onClose}>
-          &times;
+          {" "}
+          <img src={CloseIcon} alt="Close" className="modal__close-icon" />
         </button>
         <h2 className="modal__title">{title}</h2>
         <form className="modal__form" onSubmit={handleSubmit}>

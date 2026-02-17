@@ -7,6 +7,7 @@ import Footer from "../Footer/Footer.jsx";
 import SavedNews from "../SavedNews/SavedNews.jsx";
 import LoginModal from "../LoginModal/LoginModal.jsx";
 import RegisterModal from "../RegisterModal/RegisterModal.jsx";
+import SuccessModal from "../SuccessModal/SuccessModal.jsx";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 function App() {
@@ -14,6 +15,7 @@ function App() {
   const [isLoginOpen, setIsLoginOpen] = useState(false);
   const [isRegisterOpen, setIsRegisterOpen] = useState(false);
   const [savedArticles, setSavedArticles] = useState([]);
+  const [isSuccessOpen, setIsSuccessOpen] = useState(false);
 
   const openLogin = () => setIsLoginOpen(true);
   const closeLogin = () => setIsLoginOpen(false);
@@ -37,8 +39,8 @@ function App() {
   };
 
   const handleRegisterSuccess = (user) => {
-    setCurrentUser(user);
     closeRegister();
+    setIsSuccessOpen(true);
   };
 
   const handleLogout = () => {
@@ -89,6 +91,15 @@ function App() {
           }
         />
       </Routes>
+
+      <SuccessModal
+        isOpen={isSuccessOpen}
+        onClose={() => setIsSuccessOpen(false)}
+        onSignInClick={() => {
+          setIsSuccessOpen(false);
+          openLogin();
+        }}
+      />
 
       <LoginModal
         isOpen={isLoginOpen}
