@@ -104,7 +104,7 @@
   display: contents;
 }
 
-@media (max-width: 320px) {
+@media (max-width: 460px) {
   .navigation__menu-btn {
     display: block;
   }
