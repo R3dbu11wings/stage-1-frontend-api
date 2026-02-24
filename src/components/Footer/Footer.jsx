@@ -1,4 +1,6 @@
 import "./Footer.css";
+import LinkedinIcon from "../../assets/linkedin.svg";
+import GithubIcon from "../../assets/github.svg";
 
 function Footer() {
   return (
@@ -24,11 +26,7 @@ function Footer() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          <img
-            className="footer__image"
-            src="../../src/assets/linkedin.svg"
-            alt="LinkedIn"
-          />
+          <img className="footer__image" src={LinkedinIcon} alt="LinkedIn" />
         </a>
         <a
           href="https://github.com/R3dbu11wings"
@@ -36,11 +34,7 @@ function Footer() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          <img
-            className="footer__image-git"
-            src="../../src/assets/github.svg"
-            alt="GitHub"
-          />
+          <img className="footer__image-git" src={GithubIcon} alt="GitHub" />
         </a>
       </nav>
     </footer>

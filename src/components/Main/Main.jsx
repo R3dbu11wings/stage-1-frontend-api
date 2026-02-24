@@ -14,15 +14,27 @@ function Main({ savedArticles, onSave }) {
   const [error, setError] = useState(null);
   const [visibleCount, setVisibleCount] = useState(INITIAL_COUNT);
 
+  const newsApiBaseUrl =
+    process.env.NODE_ENV === "production"
+      ? "https://nomoreparties.co/news/v2/everything"
+      : "https://newsapi.org/v2/everything";
+
   const handleSearch = async (query) => {
     setIsLoading(true);
     setHasSearched(true);
     setError(null);
     setVisibleCount(INITIAL_COUNT);
 
+    const today = new Date();
+    const sevenDaysAgo = new Date();
+    sevenDaysAgo.setDate(today.getDate() - 7);
+
+    const to = today.toISOString().split("T")[0];
+    const from = sevenDaysAgo.toISOString().split("T")[0];
+
     try {
       const response = await fetch(
-        `https://newsapi.org/v2/everything?q=${query}&pageSize=6&apiKey=${import.meta.env.VITE_NEWS_API_KEY}`,
+        `${newsApiBaseUrl}?q=${query}&from=${from}&to=${to}&pageSize=100&apiKey=${import.meta.env.VITE_NEWS_API_KEY}`,
       );
       const data = await response.json();
       setArticles(data.articles);
@@ -32,7 +44,6 @@ function Main({ savedArticles, onSave }) {
       setIsLoading(false);
     }
   };
-
   const visibleArticles = articles.slice(0, visibleCount);
   const hasMore = visibleCount < articles.length;
 

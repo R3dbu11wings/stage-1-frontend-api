@@ -38,7 +38,7 @@ function App() {
     closeLogin();
   };
 
-  const handleRegisterSuccess = (user) => {
+  const handleRegisterSuccess = () => {
     closeRegister();
     setIsSuccessOpen(true);
   };

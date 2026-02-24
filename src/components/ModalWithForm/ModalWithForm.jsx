@@ -9,7 +9,6 @@ function ModalWithForm({
   buttonText,
   onSubmit,
   children,
-  bottomText,
   bottomLinkText,
   onBottomLinkClick,
 }) {

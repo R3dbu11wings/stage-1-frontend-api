@@ -1,15 +1,11 @@
 import "./About.css";
+import aboutImage from "../../assets/aboutimage.jpg";
 
 function About() {
   return (
     <div className="about">
       <div className="about__image-container">
-        <img
-          src="../../src/assets/aboutimage.jpg"
-          alt="Author"
-          className="about__image"
-        />
-        <p className="about__image-text"></p>
+        <img src={aboutImage} alt="Author" className="about__image" />
       </div>
       <div className="about__container">
         <h1 className="about__title">About the Author</h1>
