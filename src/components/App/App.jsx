@@ -14,8 +14,12 @@ function App() {
   const [currentUser, setCurrentUser] = useState(null);
   const [isLoginOpen, setIsLoginOpen] = useState(false);
   const [isRegisterOpen, setIsRegisterOpen] = useState(false);
-  const [savedArticles, setSavedArticles] = useState([]);
   const [isSuccessOpen, setIsSuccessOpen] = useState(false);
+
+  const [savedArticles, setSavedArticles] = useState(() => {
+    const stored = localStorage.getItem("savedArticles");
+    return stored ? JSON.parse(stored) : [];
+  });
 
   const openLogin = () => setIsLoginOpen(true);
   const closeLogin = () => setIsLoginOpen(false);
@@ -50,10 +54,11 @@ function App() {
   const handleSave = (article) => {
     setSavedArticles((prev) => {
       const isAlreadySaved = prev.some((a) => a.url === article.url);
-      if (isAlreadySaved) {
-        return prev.filter((a) => a.url !== article.url);
-      }
-      return [...prev, article];
+      const updated = isAlreadySaved
+        ? prev.filter((a) => a.url !== article.url)
+        : [...prev, article];
+      localStorage.setItem("savedArticles", JSON.stringify(updated));
+      return updated;
     });
   };
 
