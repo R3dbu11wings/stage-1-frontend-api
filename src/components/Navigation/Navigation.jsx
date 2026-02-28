@@ -3,6 +3,7 @@ import "./Navigation.css";
 import logoutIcon from "../../assets/logout.svg";
 import blackLogoutIcon from "../../assets/blacklogout.svg";
 import menuIcon from "../../assets/menu.svg";
+import blackMenuIcon from "../../assets/blackmenu.svg";
 import closeIcon from "../../assets/close.svg";
 
 function Navigation({ currentUser, onSignInClick, onLogout, isDark }) {
@@ -19,7 +20,11 @@ function Navigation({ currentUser, onSignInClick, onLogout, isDark }) {
   return (
     <>
       <button className="navigation__menu-btn" onClick={toggleMobileMenu}>
-        <img src={menuIcon} alt="Menu" className="navigation__menu-icon" />
+        <img
+          src={isDark ? blackMenuIcon : menuIcon}
+          alt="Menu"
+          className="navigation__menu-icon"
+        />
       </button>
 
       <nav
