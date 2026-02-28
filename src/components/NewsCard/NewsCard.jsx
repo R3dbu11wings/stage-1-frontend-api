@@ -3,6 +3,7 @@ import BookmarkIcon from "../../assets/bookmark.svg";
 import BookmarkHover from "../../assets/blackmark.svg";
 import BookmarkActive from "../../assets/bluemark.svg";
 import TrashIcon from "../../assets/trash.svg";
+import TrashHover from "../../assets/trashhover.svg";
 import { useState } from "react";
 
 function NewsCard({ article, onSave, isSaved, keyword, isOnSavedPage }) {
@@ -16,7 +17,7 @@ function NewsCard({ article, onSave, isSaved, keyword, isOnSavedPage }) {
   });
 
   const getBookmarkIcon = () => {
-    if (isSaved && isOnSavedPage) return TrashIcon;
+    if (isSaved && isOnSavedPage) return isHovered ? TrashHover : TrashIcon;
     if (isSaved) return BookmarkActive;
     if (isHovered) return BookmarkHover;
     return BookmarkIcon;
