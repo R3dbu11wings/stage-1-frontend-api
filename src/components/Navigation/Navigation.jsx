@@ -1,6 +1,7 @@
 import { useState } from "react";
 import "./Navigation.css";
 import logoutIcon from "../../assets/logout.svg";
+import blackLogoutIcon from "../../assets/blacklogout.svg";
 import menuIcon from "../../assets/menu.svg";
 import closeIcon from "../../assets/close.svg";
 
@@ -63,7 +64,7 @@ function Navigation({ currentUser, onSignInClick, onLogout, isDark }) {
               </span>
               <button className="navigation__logout" onClick={onLogout}>
                 <img
-                  src={logoutIcon}
+                  src={isDark ? blackLogoutIcon : logoutIcon}
                   alt="Logout"
                   className="navigation__logout-icon"
                 />
