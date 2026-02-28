@@ -1,14 +1,14 @@
 import "./SavedNews.css";
 import NewsCard from "../NewsCard/NewsCard.jsx";
 
-function SavedNews({ savedArticles, onSave }) {
+function SavedNews({ savedArticles, onSave, currentUser }) {
   return (
     <main className="saved-news">
       <div className="saved-news__header">
         <p className="saved-news__label">Saved articles</p>
         <h1 className="saved-news__title">
           {savedArticles.length > 0
-            ? `${savedArticles.length} article${savedArticles.length > 1 ? "s" : ""} saved`
+            ? `${currentUser?.username}, you have ${savedArticles.length} article${savedArticles.length > 1 ? "s" : ""} saved`
             : "No saved articles yet"}
         </h1>
       </div>

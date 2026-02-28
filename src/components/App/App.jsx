@@ -90,7 +90,11 @@ function App() {
                 onLogout={handleLogout}
                 isDark={true}
               />
-              <SavedNews savedArticles={savedArticles} onSave={handleSave} />
+              <SavedNews
+                currentUser={currentUser}
+                savedArticles={savedArticles}
+                onSave={handleSave}
+              />
               <Footer />
             </div>
           }
