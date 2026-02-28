@@ -196,3 +196,17 @@
     width: 100%;
   }
 }
+
+@media (max-width: 460px) {
+  .navigation__button_dark {
+    color: white;
+    border-color: white;
+  }
+  .navigation__username_dark {
+    color: white;
+  }
+
+  .navigation__logout-icon {
+    background-color: white;
+  }
+}
