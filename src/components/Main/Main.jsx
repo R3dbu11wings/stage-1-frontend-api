@@ -13,6 +13,7 @@ function Main({ savedArticles, onSave }) {
   const [hasSearched, setHasSearched] = useState(false);
   const [error, setError] = useState(null);
   const [visibleCount, setVisibleCount] = useState(INITIAL_COUNT);
+  const [query, setQuery] = useState("");
 
   const newsApiBaseUrl =
     process.env.NODE_ENV === "production"
@@ -22,6 +23,7 @@ function Main({ savedArticles, onSave }) {
   const handleSearch = async (query) => {
     setIsLoading(true);
     setHasSearched(true);
+    setQuery(query);
     setError(null);
     setVisibleCount(INITIAL_COUNT);
 
@@ -74,6 +76,7 @@ function Main({ savedArticles, onSave }) {
                 article={article}
                 onSave={onSave}
                 isSaved={savedArticles.some((a) => a.url === article.url)}
+                keyword={query}
               />
             ))}
           </div>

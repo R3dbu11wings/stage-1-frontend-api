@@ -2,9 +2,10 @@ import "./NewsCard.css";
 import BookmarkIcon from "../../assets/bookmark.svg";
 import BookmarkHover from "../../assets/blackmark.svg";
 import BookmarkActive from "../../assets/bluemark.svg";
+import TrashIcon from "../../assets/trash.svg";
 import { useState } from "react";
 
-function NewsCard({ article, onSave, isSaved }) {
+function NewsCard({ article, onSave, isSaved, keyword, isOnSavedPage }) {
   const { urlToImage, title, description, publishedAt, source, url } = article;
   const [isHovered, setIsHovered] = useState(false);
 
@@ -15,6 +16,7 @@ function NewsCard({ article, onSave, isSaved }) {
   });
 
   const getBookmarkIcon = () => {
+    if (isSaved && isOnSavedPage) return TrashIcon;
     if (isSaved) return BookmarkActive;
     if (isHovered) return BookmarkHover;
     return BookmarkIcon;
@@ -23,6 +25,9 @@ function NewsCard({ article, onSave, isSaved }) {
   return (
     <div className="card">
       <div className="card__image-container">
+        {isSaved && article.keyword && (
+          <span className="card__tag">{article.keyword}</span>
+        )}
         <a href={url} target="_blank" rel="noopener noreferrer">
           <img
             className="card__image"
@@ -32,11 +37,15 @@ function NewsCard({ article, onSave, isSaved }) {
         </a>
         <button
           className="card__save-btn"
-          onClick={() => onSave(article)}
+          onClick={() => onSave({ ...article, keyword: keyword })}
           onMouseEnter={() => setIsHovered(true)}
           onMouseLeave={() => setIsHovered(false)}
         >
-          <img src={getBookmarkIcon()} alt="Save" className="card__save-icon" />
+          <img
+            src={getBookmarkIcon()}
+            alt={isSaved ? "Delete" : "Save"}
+            className="card__save-icon"
+          />
         </button>
       </div>
       <div className="card__content">
