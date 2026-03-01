@@ -7,7 +7,7 @@ import Preloader from "../Preloader/Preloader.jsx";
 const INITIAL_COUNT = 3;
 const LOAD_MORE_COUNT = 3;
 
-function Main({ savedArticles, onSave }) {
+function Main({ savedArticles, onSave, currentUser }) {
   const [articles, setArticles] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
   const [hasSearched, setHasSearched] = useState(false);
@@ -77,6 +77,7 @@ function Main({ savedArticles, onSave }) {
                 onSave={onSave}
                 isSaved={savedArticles.some((a) => a.url === article.url)}
                 keyword={query}
+                currentUser={currentUser}
               />
             ))}
           </div>

@@ -6,7 +6,14 @@ import TrashIcon from "../../assets/trash.svg";
 import TrashHover from "../../assets/trashhover.svg";
 import { useState } from "react";
 
-function NewsCard({ article, onSave, isSaved, keyword, isOnSavedPage }) {
+function NewsCard({
+  article,
+  onSave,
+  isSaved,
+  keyword,
+  isOnSavedPage,
+  currentUser,
+}) {
   const { urlToImage, title, description, publishedAt, source, url } = article;
   const [isHovered, setIsHovered] = useState(false);
 
@@ -36,9 +43,14 @@ function NewsCard({ article, onSave, isSaved, keyword, isOnSavedPage }) {
             alt={title}
           />
         </a>
+        {!currentUser && isHovered && (
+          <div className="card__tooltip">Sign in to save articles</div>
+        )}
         <button
           className="card__save-btn"
-          onClick={() => onSave({ ...article, keyword: keyword })}
+          onClick={() =>
+            currentUser && onSave({ ...article, keyword: keyword })
+          }
           onMouseEnter={() => setIsHovered(true)}
           onMouseLeave={() => setIsHovered(false)}
         >
