@@ -29,7 +29,7 @@ function NewsCard({
     if (isHovered) return BookmarkHover;
     return BookmarkIcon;
   };
-
+  console.log("currentUser:", currentUser);
   return (
     <div className="card">
       <div className="card__image-container">

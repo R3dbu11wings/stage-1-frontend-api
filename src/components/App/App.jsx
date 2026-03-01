@@ -101,7 +101,11 @@ function App() {
                 onSignInClick={openLogin}
                 onLogout={handleLogout}
               />
-              <Main savedArticles={savedArticles} onSave={handleSave} />
+              <Main
+                savedArticles={savedArticles}
+                onSave={handleSave}
+                currentUser={currentUser}
+              />
               <About />
               <Footer />
             </div>
