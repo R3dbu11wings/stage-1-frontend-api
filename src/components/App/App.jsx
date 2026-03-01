@@ -56,11 +56,9 @@ function App() {
   };
 
   const handleLoginSuccess = (user) => {
-    authorize(user.email, user.password).then((res) => {
-      localStorage.setItem("token", res.token);
-      setCurrentUser(user);
-      closeLogin();
-    });
+    localStorage.setItem("token", "a-fake-token");
+    setCurrentUser(user);
+    closeLogin();
   };
 
   const handleRegisterSuccess = () => {
