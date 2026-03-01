@@ -1,5 +1,7 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import "./App.css";
+
 import Header from "../Header/Header.jsx";
 import Main from "../Main/Main.jsx";
 import About from "../About/About.jsx";
@@ -8,7 +10,9 @@ import SavedNews from "../SavedNews/SavedNews.jsx";
 import LoginModal from "../LoginModal/LoginModal.jsx";
 import RegisterModal from "../RegisterModal/RegisterModal.jsx";
 import SuccessModal from "../SuccessModal/SuccessModal.jsx";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+
+import { authorize, checkToken } from "../../utils/auth.js";
+import { getItems, saveArticle, removeArticle } from "../../utils/api.js";
 
 function App() {
   const [currentUser, setCurrentUser] = useState(null);
@@ -20,6 +24,20 @@ function App() {
     const stored = localStorage.getItem("savedArticles");
     return stored ? JSON.parse(stored) : [];
   });
+
+  useEffect(() => {
+    const token = localStorage.getItem("token");
+    if (token) {
+      checkToken(token).then((res) => {
+        setCurrentUser({ username: res.data.name, email: res.data.email });
+      });
+    }
+    getItems().then((items) => {
+      if (items.length > 0) {
+        setSavedArticles(items);
+      }
+    });
+  }, []);
 
   const openLogin = () => setIsLoginOpen(true);
   const closeLogin = () => setIsLoginOpen(false);
@@ -38,8 +56,11 @@ function App() {
   };
 
   const handleLoginSuccess = (user) => {
-    setCurrentUser(user);
-    closeLogin();
+    authorize(user.email, user.password).then((res) => {
+      localStorage.setItem("token", res.token);
+      setCurrentUser(user);
+      closeLogin();
+    });
   };
 
   const handleRegisterSuccess = () => {
@@ -52,14 +73,22 @@ function App() {
   };
 
   const handleSave = (article) => {
-    setSavedArticles((prev) => {
-      const isAlreadySaved = prev.some((a) => a.url === article.url);
-      const updated = isAlreadySaved
-        ? prev.filter((a) => a.url !== article.url)
-        : [...prev, article];
-      localStorage.setItem("savedArticles", JSON.stringify(updated));
-      return updated;
-    });
+    const isAlreadySaved = savedArticles.some((a) => a.url === article.url);
+
+    if (isAlreadySaved) {
+      const savedArticle = savedArticles.find((a) => a.url === article.url);
+      removeArticle(savedArticle._id).then(() => {
+        const updated = savedArticles.filter((a) => a.url !== article.url);
+        setSavedArticles(updated);
+        localStorage.setItem("savedArticles", JSON.stringify(updated));
+      });
+    } else {
+      saveArticle(article).then((savedArticle) => {
+        const updated = [...savedArticles, savedArticle];
+        setSavedArticles(updated);
+        localStorage.setItem("savedArticles", JSON.stringify(updated));
+      });
+    }
   };
 
   return (

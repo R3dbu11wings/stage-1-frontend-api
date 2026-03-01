@@ -21,3 +21,25 @@ export const register = ({ email, password, username }) => {
     }, 500);
   });
 };
+
+export const authorize = (email, password) => {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      if (email && password) {
+        resolve({ token: "a-fake-token" });
+      } else {
+        reject(new Error("Invalid credentials"));
+      }
+    }, 500);
+  });
+};
+
+export const checkToken = (token) => {
+  return new Promise((resolve) => {
+    setTimeout(() => {
+      resolve({
+        data: { name: "fake user", email: "fake@example.com", _id: "fake-id" },
+      });
+    }, 500);
+  });
+};
