@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import "./Navigation.css";
 import logoutIcon from "../../assets/logout.svg";
 import blackLogoutIcon from "../../assets/blacklogout.svg";
@@ -42,21 +43,21 @@ function Navigation({ currentUser, onSignInClick, onLogout, isDark }) {
         </div>
 
         <div className="navigation__mobile-links">
-          <a
-            href="/"
+          <Link
+            to="/"
             className={`navigation__link ${isDark ? "navigation__link_dark" : ""}`}
             onClick={closeMobileMenu}
           >
             Home
-          </a>
+          </Link>
           {currentUser && (
-            <a
-              href="/saved-news"
+            <Link
+              to="/saved-news"
               className={`navigation__link ${isDark ? "navigation__link_dark" : ""}`}
               onClick={closeMobileMenu}
             >
               Saved Articles
-            </a>
+            </Link>
           )}
           {currentUser ? (
             <div

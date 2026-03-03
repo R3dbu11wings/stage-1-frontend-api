@@ -17,3 +17,11 @@
     background-size: inherit;
   }
 }
+
+@media (max-width: 630px) {
+  .page_saved {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+}

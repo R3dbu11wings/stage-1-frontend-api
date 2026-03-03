@@ -23,6 +23,7 @@ function SavedNews({ savedArticles, onSave, currentUser }) {
                 onSave={onSave}
                 isSaved={true}
                 isOnSavedPage={true}
+                currentUser={currentUser}
               />
             ))}
           </div>

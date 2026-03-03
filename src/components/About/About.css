@@ -28,7 +28,7 @@
 }
 
 .about__image-text {
-  font-family: Roboto;
+  font-family: Roboto, Arial, sans-serif;
   font-weight: 400;
   font-size: 20px;
   line-height: 100%;
@@ -41,7 +41,7 @@
   width: 600px;
   margin: 0;
   padding: 0;
-  font-family: Roboto;
+  font-family: Roboto, Arial, sans-serif;
   font-size: 18px;
   line-height: 24px;
 }
@@ -72,7 +72,7 @@
   }
 }
 
-@media (max-width: 460px) {
+@media (max-width: 630px) {
   .about {
     padding: 32px 16px 64px;
     flex-direction: column;
