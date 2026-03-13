@@ -1,0 +1,27 @@
+.page {
+  min-height: 100vh;
+  padding: 0;
+  margin: 0;
+  background: url("../../assets/phone.png") no-repeat center top;
+  background-size: 100% 500px;
+  display: flex;
+  flex-direction: column;
+}
+
+.page_saved {
+  background: white;
+}
+
+@media (max-width: 768px) {
+  .page {
+    background-size: inherit;
+  }
+}
+
+@media (max-width: 630px) {
+  .page_saved {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+}

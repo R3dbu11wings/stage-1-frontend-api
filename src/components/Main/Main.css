@@ -1,0 +1,127 @@
+.main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+}
+
+.main__title {
+  font-family: "Roboto Slab", Georgia, serif;
+  font-weight: 400;
+  font-size: 60px;
+  line-height: 64px;
+  letter-spacing: 0px;
+  width: 608px;
+  margin-bottom: 10px;
+}
+
+.main__subtitle {
+  font-family: Roboto, Arial, sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 24px;
+  width: 608px;
+  margin: 32px 0 0;
+}
+
+.main__status {
+  color: white;
+  font-size: 16px;
+  margin: 16px 0;
+  text-align: center;
+  padding: 40px;
+}
+
+.main__results {
+  background-color: #f5f6f7;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 80px;
+}
+
+.main__results-title {
+  font-family: "Roboto Slab", Georgia, serif;
+  font-weight: 400;
+  font-size: 40px;
+  line-height: 46px;
+  color: #1a1b22;
+  margin: 80px 104px 64px;
+}
+
+.main__cards {
+  display: flex;
+  gap: 24px;
+  margin: 0;
+  justify-content: center;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  flex-direction: row;
+}
+
+.main__see-more {
+  width: 288px;
+  height: 64px;
+  border-radius: 80px;
+  background-color: #ffffff;
+  margin-top: 64px;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 500;
+  align-self: center;
+}
+
+.main__see-more:hover {
+  background-color: #e0e0e0;
+}
+
+@media (max-width: 768px) {
+  .main__title {
+    width: 385px;
+    font-size: 36px;
+    line-height: 40px;
+  }
+
+  .main__subtitle {
+    width: 452px;
+  }
+
+  .main__results {
+    padding: 0;
+  }
+  .main__results-title {
+    margin: 40px 0 32px 40px;
+    font-size: 30px;
+    line-height: 34px;
+  }
+  .main__cards {
+    margin: 0;
+    width: 100%;
+    gap: 6px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .main__see-more {
+    margin-top: 32px;
+    margin-bottom: 40px;
+  }
+}
+
+@media (max-width: 630px) {
+  .main__title {
+    width: 285px;
+    margin-top: 30px;
+  }
+  .main__subtitle {
+    width: 288px;
+    margin-top: 16px;
+  }
+
+  .main__results-title {
+    margin: 32px 16px 58px;
+  }
+}

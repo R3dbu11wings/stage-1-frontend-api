@@ -1,0 +1,26 @@
+.success-modal__title {
+  font-family: "Roboto Slab", Georgia, serif;
+  font-weight: 900;
+  font-size: 24px;
+  color: #000000;
+  margin: 0 0 18px;
+  padding-right: 20px;
+  width: 315px;
+  height: 56px;
+}
+
+.success-modal__link {
+  background: none;
+  border: none;
+  color: #2f71e5;
+  font-family: Roboto, Arial, sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  cursor: pointer;
+  text-decoration: none;
+  padding: 0;
+}
+
+.success-modal__link:hover {
+  color: #347eff;
+}
